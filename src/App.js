@@ -7,7 +7,7 @@ import "react-svg-radar-chart/build/css/index.css";
 const optionValues = {
   1: "Strongly Disagree",
   2: "Disagree",
-  3: "Neutral",
+  3: "Neither Agree/ Disagree",
   4: "Agree",
   5: "Strongly Agree"
 };
@@ -71,22 +71,25 @@ export default function App() {
             {Object.keys(questions).map((key) => {
               return (
                 <div className={styles.row} key={key}>
-                  <div>{key}</div>
-                  <input
-                    type="range"
-                    min={1}
-                    max={5}
-                    value={questions[key] ? questions[key].value : undefined}
-                    onChange={(e) => {
-                      setState((newState) => {
-                        // console.log("change", e.target.value);
-                        const newValue = Number(e.target.value);
+                  <div className={styles.left}>{key}</div>
+                  <div className={styles.right}>
+                    <input
+                      type="range"
+                      min={1}
+                      max={5}
+                      value={questions[key]?.value || undefined}
+                      onChange={(e) => {
+                        setState((newState) => {
+                          // console.log("change", e.target.value);
+                          const newValue = Number(e.target.value);
 
-                        newState[section][key].value = Math.min(newValue, 5);
-                        return { ...newState };
-                      });
-                    }}
-                  />
+                          newState[section][key].value = Math.min(newValue, 5);
+                          return { ...newState };
+                        });
+                      }}
+                    />
+                    <div className={styles.caption}>{optionValues[questions[key]?.value]}</div>
+                  </div>
                 </div>
               );
             })}
