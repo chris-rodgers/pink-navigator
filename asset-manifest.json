@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/pink-navigator/static/css/main.css",
+    "main.js": "/pink-navigator/static/js/main.js",
+    "main.js.map": "/pink-navigator/static/js/main.js.map",
+    "index.html": "/pink-navigator/index.html",
+    "static/css/main.css.map": "/pink-navigator/static/css/main.css.map",
+    "static/js/main.js.LICENSE.txt": "/pink-navigator/static/js/main.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/css/main.css",
+    "static/js/main.js"
+  ]
+}
