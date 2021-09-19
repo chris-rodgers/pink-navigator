@@ -4,6 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "homepage": "https://chris-rodgers.github.io/pink-navigator",
   "dependencies": {
     "@craco/craco": "^6.3.0",
     "preact": "^10.5.14",
