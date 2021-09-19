@@ -82,7 +82,11 @@
       "value": 3,
       "sentiment": "negative"
     },
-    "While I enthusiastically start new hobbies/interests, I lose interest quickly My interests/hobbies turn into obsessions": {
+    "While I enthusiastically start new hobbies/interests, I lose interest quickly": {
+      "value": 3,
+      "sentiment": "negative"
+    },
+    "My interests/hobbies turn into obsessions": {
       "value": 3,
       "sentiment": "negative"
     },
