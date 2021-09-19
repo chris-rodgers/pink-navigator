@@ -1,0 +1,42 @@
+.container {
+  font-family: inherit;
+  border-radius: 6px;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+  padding: 20px;
+  background-color: white;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.row div {
+  flex: 1;
+}
+
+.row input {
+  font-size: 20px;
+  flex-basis: 100px;
+  margin-left: 20px;
+}
+
+.result svg {
+  margin: auto;
+  /* opacity: 0.5; */
+  display: block;
+  max-width: 100%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 18px;
+}
