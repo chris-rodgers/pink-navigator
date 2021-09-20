@@ -6,6 +6,10 @@
   background-color: white;
 }
 
+.section{
+  margin-bottom: 20px;
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -43,4 +47,11 @@
 .caption{
   font-size: 12px;
   text-align: center;
+}
+
+.footer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
 }

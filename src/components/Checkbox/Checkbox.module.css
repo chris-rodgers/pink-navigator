@@ -1,0 +1,61 @@
+.container {
+    cursor: pointer;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.checkbox {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    color: white;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.container--radio .checkbox{
+    border-radius: 11px;
+}
+
+.container--disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.checkbox svg {
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 3px;
+    stroke-linecap: round;
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+
+.checkbox--checked {
+    background-color: #005ba9;
+    border-color: #005ba9;
+}
+
+.checkbox--highlighted {
+    box-shadow:  0 0 0 3px #9dcdf5
+}
+
+.checkbox--checked svg {
+    display: block;
+}
+
+.price{
+    opacity: 0.5;
+    font-size: 12px;
+    margin-left: auto;
+    white-space: nowrap;
+    padding-left: 20px;
+}
