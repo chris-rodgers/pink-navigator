@@ -7,17 +7,17 @@ module.exports = {
             }
         },
         configure: {
-            // optimization: {
-            //     runtimeChunk: false,
-            //     splitChunks: {
-            //         cacheGroups: {
-            //             default: false,
-            //         },
-            //         chunks(chunk) {
-            //             return false;
-            //         },
-            //     },
-            // },
+            optimization: {
+                runtimeChunk: false,
+                splitChunks: {
+                    cacheGroups: {
+                        default: false,
+                    },
+                    chunks(chunk) {
+                        return false;
+                    },
+                },
+            },
             output: {
                 filename: 'static/js/[name].js'
             }
