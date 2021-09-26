@@ -51,7 +51,7 @@ export default function App() {
     return { data: [res], captions };
   }, [state]);
 
-  console.log(data);
+  // console.log(data);
 
   const handleSubmit = () => {
     const body = new FormData();
@@ -68,7 +68,7 @@ export default function App() {
         questionValues[questionValueKey] = `${questionValueKey}. ${key}`;
       })
     })
-    console.log(Object.keys(Object.fromEntries(body)), questionValues)
+    // console.log(Object.keys(Object.fromEntries(body)), questionValues)
     fetch('https://script.google.com/macros/s/AKfycbzn7uelFFvDkMmP9Dk3UXruYog39DhEpnlC5X4iAOgoGM85jdtiU36LzpWkApavfZhi/exec', { method: 'POST', body })
       .then(response => { setHasSubmitted(true); console.log('Success!', response) })
       .catch(error => console.error('Error!', error.message))
@@ -92,9 +92,9 @@ export default function App() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
+      {/* <div className={styles.title}>
         Life stage measurements for Repetitive paralysis cycle.
-      </div>
+      </div> */}
       {[
         <div>
           {Object.keys(personalDetailsState).map(key => {
@@ -148,8 +148,14 @@ export default function App() {
           })}
         </div>,
         <div>
-          <div className={styles.subtitle}>Result</div>
+          <div className={styles.title}>Result</div>
           <div className={styles.result}>
+            {Object.keys(data[0].data).map(key => {
+              return (<div style={{marginBottom: 50}}>
+                <div className={styles.subtitle}>{key}</div>
+                <p>Score: {(data[0].data[key] * 10).toFixed()}/10</p>
+              </div>)
+            })}
             <RadarChart
               options={{
                 captionMargin: 50,
