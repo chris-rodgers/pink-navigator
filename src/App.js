@@ -3,8 +3,10 @@ import RadarChart from "react-svg-radar-chart";
 import "react-svg-radar-chart/build/css/index.css";
 import styles from "./styles.module.css";
 import questions from "./questions.json";
+import personalDetails from "./personal-details.json"
 import Checkbox from "./components/Checkbox/Checkbox";
 import Button from "./components/Button/Button";
+import Select from "./components/Select/Select";
 
 const optionValues = {
   1: "Strongly Disagree",
@@ -19,8 +21,10 @@ const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
 export default function App() {
   const [state, setState] = React.useState(questions);
   const [shouldSubmit, setShouldSubmit] = React.useState(true);
-  const [isFinished, setIsFinished] = React.useState(false);
+  const [page, setPage] = React.useState(0);
   const [hasSubmitted, setHasSubmitted] = React.useState(false);
+  const isFinished = page === 2;
+  const [personalDetailsState, setPersonalDetailsState] = React.useState(personalDetails)
 
   const { data, captions } = React.useMemo(() => {
     const res = {
@@ -52,6 +56,11 @@ export default function App() {
   const handleSubmit = () => {
     const body = new FormData();
     const questionValues = {};
+
+    Object.keys(personalDetailsState).forEach((key) => {
+      body.append(key, personalDetailsState[key].value);
+    })
+    // Questions
     Object.values(state).forEach((section, si) => {
       Object.keys(section).forEach((key, i) => {
         const questionValueKey = `${si + 1}${alpha[i]}`
@@ -59,14 +68,18 @@ export default function App() {
         questionValues[questionValueKey] = `${questionValueKey}. ${key}`;
       })
     })
-    console.log(body, questionValues)
+    console.log(Object.keys(Object.fromEntries(body)), questionValues)
     fetch('https://script.google.com/macros/s/AKfycbzn7uelFFvDkMmP9Dk3UXruYog39DhEpnlC5X4iAOgoGM85jdtiU36LzpWkApavfZhi/exec', { method: 'POST', body })
       .then(response => { setHasSubmitted(true); console.log('Success!', response) })
       .catch(error => console.error('Error!', error.message))
   }
 
-  const handleFinished = () => {
-    setIsFinished(true);
+  const handlePrev = () => {
+    setPage(page - 1);
+  }
+
+  const handleNext = () => {
+    setPage(page + 1);
   }
 
   React.useEffect(() => {
@@ -75,52 +88,65 @@ export default function App() {
     }
   }, [isFinished, shouldSubmit]);
 
-  const shouldShowCheckbox = !isFinished || !shouldSubmit;
+  // const shouldShowCheckbox = !isFinished || !shouldSubmit;
 
   return (
     <div className={styles.container}>
       <div className={styles.title}>
         Life stage measurements for Repetitive paralysis cycle.
       </div>
-      {!isFinished ? <div>
-        {Object.keys(state).map((section, i) => {
-          const questions = state[section];
-          return (
-            <div key={i} className={styles.section}>
-              <div className={styles.subtitle}>{section}</div>
-              {Object.keys(questions).map((key) => {
-                return (
-                  <div className={styles.row} key={key}>
-                    <div className={styles.left}>{key}</div>
-                    <div className={styles.right}>
-                      <input
-                        type="range"
-                        min={1}
-                        max={5}
-                        value={questions[key]?.value || undefined}
-                        onChange={(e) => {
-                          setState((newState) => {
-                            // console.log("change", e.target.value);
-                            const newValue = Number(e.target.value);
+      {[
+        <div>
+          {Object.keys(personalDetailsState).map(key => {
+            const detail = personalDetailsState[key];
+            return (<div key={key}>
+              <label className={styles.label} htmlFor={key}>{detail.title}</label>
+              <div><Select id={key} custom={detail.custom} value={detail.value} options={detail.options} onChange={(e) => {
+                setPersonalDetailsState(prevPersonalDetailsState => {
+                  const nextPersonalDetialsState = { ...prevPersonalDetailsState };
+                  nextPersonalDetialsState[key].value = e.target.value;
+                  return nextPersonalDetialsState;
+                })
+              }} />
+              </div>
+            </div>)
+          })}
+        </div>,
+        <div>
+          {Object.keys(state).map((section, i) => {
+            const questions = state[section];
+            return (
+              <div key={i} className={styles.section}>
+                <div className={styles.subtitle}>{section}</div>
+                {Object.keys(questions).map((key) => {
+                  return (
+                    <div className={styles.row} key={key}>
+                      <div className={styles.left}>{key}</div>
+                      <div className={styles.right}>
+                        <input
+                          type="range"
+                          min={1}
+                          max={5}
+                          value={questions[key]?.value || undefined}
+                          onChange={(e) => {
+                            setState((newState) => {
+                              // console.log("change", e.target.value);
+                              const newValue = Number(e.target.value);
 
-                            newState[section][key].value = Math.min(newValue, 5);
-                            return { ...newState };
-                          });
-                        }}
-                      />
-                      <div className={styles.caption}>{optionValues[questions[key]?.value]}</div>
+                              newState[section][key].value = Math.min(newValue, 5);
+                              return { ...newState };
+                            });
+                          }}
+                        />
+                        <div className={styles.caption}>{optionValues[questions[key]?.value]}</div>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
-
-        <div className={styles.footer}>
-          <Button onClick={handleFinished}>Submit Answers</Button>
-        </div>
-      </div> :
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>,
         <div>
           <div className={styles.subtitle}>Result</div>
           <div className={styles.result}>
@@ -134,9 +160,13 @@ export default function App() {
               size={450}
             />
           </div>
-        </div>}
+        </div>][page]}
       <div className={styles.footer}>
-        <Checkbox onClick={() => { setShouldSubmit(!shouldSubmit) }} disabled={!shouldShowCheckbox} checked={shouldSubmit} label={shouldShowCheckbox ? "Record my answers" : hasSubmitted ? "We've recorded your answers" : "Submitting..."} />
+        <div className={styles.buttons}>
+          {!isFinished && page ? <Button onClick={handlePrev}>← Previous</Button> : null}
+          {!isFinished ? <Button onClick={handleNext}>{['Next', 'Finish'][page]} →</Button> : null}
+        </div>
+        {/* <Checkbox onClick={() => { setShouldSubmit(!shouldSubmit) }} disabled={!shouldShowCheckbox} checked={shouldSubmit} label={shouldShowCheckbox ? "Record my answers" : hasSubmitted ? "We've recorded your answers" : "Submitting..."} /> */}
       </div>
     </div >
   );

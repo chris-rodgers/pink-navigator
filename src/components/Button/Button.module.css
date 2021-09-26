@@ -9,8 +9,15 @@
     background-color: #005ba9;
     color: white;
     font-size: 18px;
-    /* margin-bottom: 20px; */
+    margin: 0 10px 20px 10px;
     appearance: none;
     border: none;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 250ms ease;
 }
 
+.button:hover{
+    background-color: #004785;
+}

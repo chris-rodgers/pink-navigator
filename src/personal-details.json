@@ -1,0 +1,57 @@
+{
+    "Age": {
+        "title": "Age: What is your age?",
+        "value": "please-select",
+        "options": [
+            "18-24",
+            "25-29",
+            "30-34",
+            "35-44",
+            "45-54",
+            "55-64",
+            "65-74",
+            "75+"
+        ]
+    },
+    "Ethnicity": {
+        "title": "Ethnicity(or Race):  Which of these best describes your ethnicity/ race?",
+        "value": "please-select",
+        "custom": "Other (please specify)",
+        "options": [
+            "White",
+            "Mixed",
+            "Asian or Asian British",
+            "Black or Black British",
+            "Arab",
+            "Prefer not to say"
+        ]
+    },
+    "Gender": {
+        "title": "Gender: What is your gender?",
+        "value": "please-select",
+        "custom": "Prefer to self-describe as...",
+        "options": [
+            "Male",
+            "Female",
+            "Transgender",
+            "Non binary",
+            "Intersex",
+            "Other",
+            "Prefer not to say"
+        ]
+    },
+    "Orientation": {
+        "title": "Sexual Orientation",
+        "value": "please-select",
+        "custom": "Prefer to self-describe as...",
+        "options": [
+            "Bisexual",
+            "Gay man",
+            "Gay Woman/ Lesbian",
+            "Straight/ Heterosexual",
+            "Queer",
+            "Questioning",
+            "Prefer not to say"
+        ]
+    }
+}
