@@ -1,198 +1,210 @@
 {
   "Relationships": {
-    "I am often in a new relationship": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I don’t believe in relationships": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "Trust is important to me in a relationship": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "My self-worth is based on my current relationship": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I feel safe expressing my wants, needs and desires in a relationship": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I am always looking for a new relationship": {
-      "value": 3,
-      "sentiment": "negative"
-    }
+      "I am often in a new relationship": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I don’t believe in relationships": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "Trust is important to me in a relationship": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "My self-worth is based on my current relationship": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I feel safe expressing my wants, needs and desires in a relationship": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I am always looking for a new relationship": {
+          "value": 3,
+          "sentiment": "negative"
+      }
   },
   "Career/job": {
-    "I feel validated by the quality of my work ethic or career choice": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "My queer identity influences my job choice I get bored easily": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I do not feel passion for my job/career": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I feel satisfied in my current career/job": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I am always looking for a new job": {
-      "value": 3,
-      "sentiment": "negative"
-    }
+      "I feel validated by the quality of my work ethic or career choice": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "My queer identity influences my job choice": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I get bored easily": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I do not feel passion for my job/career": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I feel satisfied in my current career/job": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I am always looking for a new job": {
+          "value": 3,
+          "sentiment": "negative"
+      }
   },
   "Environment": {
-    "I am always looking for my next getaway": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I travel a lot because it gets me away from my everyday life ": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I am always looking for the next trendy place": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I get bored quickly of my living arrangements": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I don’t get restless when I am stuck in one place": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I am always looking to move": {
-      "value": 3,
-      "sentiment": "negative"
-    }
+      "I am always looking for my next getaway": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I travel a lot because it gets me away from my everyday life ": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I am always looking for the next trendy place": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I get bored quickly of my living arrangements": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I don’t get restless when I am stuck in one place": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I am always looking to move": {
+          "value": 3,
+          "sentiment": "negative"
+      }
   },
   "Hobbies/interests": {
-    "I am always aware of the latest trends": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I consider social media a hobby": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "While I enthusiastically start new hobbies/interests, I lose interest quickly": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "My interests/hobbies turn into obsessions": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I am not influenced by what’s cool and trendy": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I am always looking for new hobbies/interests": {
-      "value": 3,
-      "sentiment": "negative"
-    }
+      "I am always aware of the latest trends": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I consider social media a hobby": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "While I enthusiastically start new hobbies/interests, I lose interest quickly": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "My interests/hobbies turn into obsessions": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I am not influenced by what’s cool and trendy": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I am always looking for new hobbies/interests": {
+          "value": 3,
+          "sentiment": "negative"
+      }
   },
   "Possessions": {
-    "I let other people influence my purchases": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I buy more stuff than I need/use": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I must have the latest products/ gadgets/ fashion/ cars": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I rarely feel satisfied with the amount of stuff I have": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I feel secure when I buy stuff": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I am always looking to purchase new stuff": {
-      "value": 3,
-      "sentiment": "negative"
-    }
+      "I let other people influence my purchases": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I buy more stuff than I need/use": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I must have the latest products/ gadgets/ fashion/ cars": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I rarely feel satisfied with the amount of stuff I have": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I feel secure when I buy stuff": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I am always looking to purchase new stuff": {
+          "value": 3,
+          "sentiment": "negative"
+      }
   },
   "Identities": {
-    "My queer identity is important to me": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I don’t base my personality on the people I hang out with": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I struggle to fit in": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I am always myself, no matter who I am with": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "My profile on social media does not reflect who I really am": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I am always changing who I am to fit in": {
-      "value": 3,
-      "sentiment": "negative"
-    }
+      "My queer identity is important to me": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I don’t base my personality on the people I hang out with": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I struggle to fit in": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I am always myself, no matter who I am with": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "My profile on social media does not reflect who I really am": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I am always changing who I am to fit in": {
+          "value": 3,
+          "sentiment": "negative"
+      }
   },
   "Spirituality": {
-    "I believe that things happen in life for a reason": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "My life is guided by the creator": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I struggle to follow the rules of my religion / culture": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I do some form of spiritual practice": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I believe in conspiracy theories": {
-      "value": 3,
-      "sentiment": "negative"
-    }
+      "I believe that things happen in life for a reason": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "My life is guided by the creator/G-d/Universe": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I struggle to follow the rules of my religion / culture": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I do some form of spiritual practice": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I forgive myself and others unconditionally": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I believe in conspiracy theories": {
+          "value": 3,
+          "sentiment": "negative"
+      }
   },
   "Purpose": {
-    "Most of what I do seems trivial and unimportant to me": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "I use my talents to make a meaningful contribution to the larger world": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I struggle to finish what I start": {
-      "value": 3,
-      "sentiment": "negative"
-    },
-    "My choices and activities are very important to me, regardless of anyone else’s opinion": {
-      "value": 3,
-      "sentiment": "positive"
-    },
-    "I feel like I make a difference in the world": {
-      "value": 3,
-      "sentiment": "positive"
-    }
+      "Most of what I do seems trivial and unimportant to me": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I use my talents to make a meaningful contribution to the larger world": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I struggle to finish what I start": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "My choices and activities are very important to me, regardless of anyone else’s opinion": {
+          "value": 3,
+          "sentiment": "positive"
+      },
+      "I rarely try anything new": {
+          "value": 3,
+          "sentiment": "negative"
+      },
+      "I feel like I make a difference in the world": {
+          "value": 3,
+          "sentiment": "positive"
+      }
   }
 }
