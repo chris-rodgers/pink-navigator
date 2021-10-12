@@ -26,6 +26,10 @@ export default function App() {
   const isFinished = page === 2;
   const [personalDetailsState, setPersonalDetailsState] = React.useState(personalDetails)
 
+  React.useEffect(() => {
+    document.getElementById('pink-navigator-root').scrollIntoView(true);
+  }, [page])
+
   const { data, captions } = React.useMemo(() => {
     const res = {
       data: {},
