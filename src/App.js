@@ -148,23 +148,34 @@ export default function App() {
           })}
         </div>,
         <div>
-          <div className={styles.title}>Result</div>
-          <div className={styles.result}>
-            {Object.keys(data[0].data).map(key => {
-              return (<div style={{marginBottom: 50}}>
-                <div className={styles.subtitle}>{key}</div>
-                <p>Score: {(data[0].data[key] * 10).toFixed()}/10</p>
-              </div>)
-            })}
-            <RadarChart
-              options={{
-                captionMargin: 50,
-                captionProps: () => ({ fontSize: 20, textAnchor: "middle" })
-              }}
-              captions={captions}
-              data={data}
-              size={450}
-            />
+          <div className={styles.title}>Result - How did you do?</div>
+          <div className={styles['results-wrapper']}>
+            <div className={styles.chart}>
+              <RadarChart
+                options={{
+                  captionMargin: 50,
+                  captionProps: () => ({ fontSize: 20, textAnchor: "middle" })
+                }}
+                captions={captions}
+                data={data}
+                size={450}
+              />
+            </div>
+            <div className={styles.results}>
+              {Object.keys(data[0].data).map(key => {
+                return (<div className={styles.result}>
+                  <div className={styles['result-inner']}>
+                    <div className={styles.subtitle}>{key}</div>
+                    <div className={styles.score}>{(data[0].data[key] * 10).toFixed()}/10</div>
+                  </div>
+                </div>)
+              })}
+            </div>
+            <div className={styles.summary}>
+              <p><strong>If you scored between 0 – 3:</strong> Oh No! You are quite stuck. Your feelings and beliefs about the past are keeping you stuck, and it may be limiting your happiness in the present. When you want to get unstuck and start living a life that you’ll love, you must change your inner world first.</p>
+              <p><strong>If you scored between 4 – 7:</strong> Not bad! but be careful because sometimes it may feel like you are moving and getting somewhere, when, in reality, you are coasting. </p>
+              <p><strong>If you scored between 8 – 10:</strong> Congratulations! You’ve got this. You are doing exceptionally well. </p>
+            </div>
           </div>
         </div>][page]}
       <div className={styles.footer}>
