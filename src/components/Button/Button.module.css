@@ -1,23 +1,23 @@
 .button {
-    flex: 1;
-    min-height: 50px;
-    padding: 0 30px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    background-color: #005ba9;
-    color: white;
-    font-size: 18px;
-    margin: 0 10px 20px 10px;
-    appearance: none;
-    border: none;
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background-color 250ms ease;
+  flex: 1;
+  min-height: 50px;
+  padding: 0 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #111111;
+  color: white;
+  font-size: 18px;
+  margin: 0 10px 20px 10px;
+  appearance: none;
+  border: none;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 250ms ease;
 }
 
-.button:hover{
-    background-color: #004785;
+.button:hover {
+  background-color: #000000;
 }

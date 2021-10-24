@@ -1,16 +1,18 @@
-.container{
-    padding-bottom: 20px;
+.container {
+  padding-bottom: 20px;
 }
 
-.select, .input{
-    height: 40px;
-    border-radius: 6px;
-    padding: 0 10px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    border: 1px solid #dddddd;
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    box-sizing: border-box;
+.select,
+.input {
+  height: 40px;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #dddddd;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  background-color: white;
 }
