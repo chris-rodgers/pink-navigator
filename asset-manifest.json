@@ -1,14 +1,23 @@
 {
   "files": {
-    "main.css": "/pink-navigator/static/css/main.css",
-    "main.js": "/pink-navigator/static/js/main.js",
-    "main.js.map": "/pink-navigator/static/js/main.js.map",
+    "main.css": "/pink-navigator/static/css/main.e5926d4f.chunk.css",
+    "main.js": "/pink-navigator/static/js/main.b41bdee6.chunk.js",
+    "main.js.map": "/pink-navigator/static/js/main.b41bdee6.chunk.js.map",
+    "runtime-main.js": "/pink-navigator/static/js/runtime-main.js",
+    "runtime-main.js.map": "/pink-navigator/static/js/runtime-main.js.map",
+    "static/css/2.a4e45bde.chunk.css": "/pink-navigator/static/css/2.a4e45bde.chunk.css",
+    "static/js/2.5679dd70.chunk.js": "/pink-navigator/static/js/2.5679dd70.chunk.js",
+    "static/js/2.5679dd70.chunk.js.map": "/pink-navigator/static/js/2.5679dd70.chunk.js.map",
     "index.html": "/pink-navigator/index.html",
-    "static/css/main.css.map": "/pink-navigator/static/css/main.css.map",
-    "static/js/main.js.LICENSE.txt": "/pink-navigator/static/js/main.js.LICENSE.txt"
+    "static/css/2.a4e45bde.chunk.css.map": "/pink-navigator/static/css/2.a4e45bde.chunk.css.map",
+    "static/css/main.e5926d4f.chunk.css.map": "/pink-navigator/static/css/main.e5926d4f.chunk.css.map",
+    "static/js/2.5679dd70.chunk.js.LICENSE.txt": "/pink-navigator/static/js/2.5679dd70.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/css/main.css",
-    "static/js/main.js"
+    "static/js/runtime-main.js",
+    "static/css/2.a4e45bde.chunk.css",
+    "static/js/2.5679dd70.chunk.js",
+    "static/css/main.e5926d4f.chunk.css",
+    "static/js/main.b41bdee6.chunk.js"
   ]
 }
