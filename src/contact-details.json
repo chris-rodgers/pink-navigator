@@ -1,0 +1,11 @@
+{
+    "Name": {
+        "title": "Name: What is your name?",
+        "value": ""
+    },
+    "Email": {
+        "title": "Email: What is your email address?",
+        "value": "",
+        "type": "email"
+    }
+}
