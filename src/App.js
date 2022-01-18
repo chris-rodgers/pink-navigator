@@ -170,7 +170,7 @@ export default function App() {
                 </div>
               );
             })}
-            <Checkbox onClick={() => { setEmailConsent(!emailConsent) }} checked={emailConsent} label={"Allow Across Rainbows to contact me via email"} />
+            <Checkbox onClick={() => { setEmailConsent(!emailConsent) }} checked={emailConsent} label={"Allow Across Rainbows to contact me about my results"} />
           </div>,
           <div style={{ marginTop: 10 }}>
             {Object.keys(personalDetailsState).map((key) => {
