@@ -4,12 +4,14 @@ import "react-svg-radar-chart/build/css/index.css";
 import styles from "./styles.module.css";
 import questions from "./questions.json";
 import personalDetails from "./personal-details.json";
-import contactDetails from "./contact-details.json";
+// import contactDetails from "./contact-details.json";
 
 import Checkbox from "./components/Checkbox/Checkbox";
 import Button from "./components/Button/Button";
 import Select from "./components/Select/Select";
 import Input from "./components/Input/Input";
+
+const HAS_SUBMITTED_ANSWERS = 'has-submitted-answers';
 
 const optionValues = {
   1: "Strongly Disagree",
@@ -52,11 +54,11 @@ export default function App() {
   const [state, setState] = React.useState(questions);
   const [shouldSubmit, setShouldSubmit] = React.useState(true);
   const [page, setPage] = React.useState(0);
-  const [hasSubmitted, setHasSubmitted] = React.useState(false);
-  const isFinished = page === 3;
-  const [contactDetailsState, setContactDetailsState] = React.useState(contactDetails);
+  const [hasSubmitted, setHasSubmitted] = React.useState(localStorage.getItem(HAS_SUBMITTED_ANSWERS) === 'true');
+  const isFinished = page === 2;
+  // const [contactDetailsState, setContactDetailsState] = React.useState(contactDetails);
   const [personalDetailsState, setPersonalDetailsState] = React.useState(personalDetails);
-  const [emailConsent, setEmailConsent] = React.useState(false)
+  // const [emailConsent, setEmailConsent] = React.useState(false)
 
   React.useEffect(() => {
     document.getElementById("pink-navigator-root").scrollIntoView(true);
@@ -93,11 +95,11 @@ export default function App() {
     const body = new FormData();
     const questionValues = {};
     
-    if(emailConsent){
-      Object.keys(contactDetailsState).forEach((key) => {
-        body.append(key, contactDetailsState[key].value);
-      });
-    }
+    // if(emailConsent){
+    //   Object.keys(contactDetailsState).forEach((key) => {
+    //     body.append(key, contactDetailsState[key].value);
+    //   });
+    // }
     Object.keys(personalDetailsState).forEach((key) => {
       body.append(key, personalDetailsState[key].value);
     });
@@ -116,6 +118,7 @@ export default function App() {
     )
       .then((response) => {
         setHasSubmitted(true);
+        localStorage.setItem(HAS_SUBMITTED_ANSWERS, 'true');
         console.log("Success!", response);
       })
       .catch((error) => console.error("Error!", error.message));
@@ -144,34 +147,34 @@ export default function App() {
       </div> */}
       {
         [
-          <div style={{ marginTop: 10, marginBottom: 20 }}>
-            {Object.keys(contactDetailsState).map((key) => {
-              const { title,...rest } = contactDetailsState[key];
-              return (
-                <div key={key}>
-                  <label className={styles.label} htmlFor={key}>
-                    {title}
-                  </label>
-                  <div>
-                    <Input
-                      id={key}
-                      onChange={(e) => {
-                        setContactDetailsState((prevContactDetailsState) => {
-                          const nextContactDetialsState = {
-                            ...prevContactDetailsState,
-                          };
-                          nextContactDetialsState[key].value = e.target.value;
-                          return nextContactDetialsState;
-                        });
-                      }}
-                      {...rest}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-            <Checkbox onClick={() => { setEmailConsent(!emailConsent) }} checked={emailConsent} label={"Allow Across Rainbows to contact me about my results"} />
-          </div>,
+          // <div style={{ marginTop: 10, marginBottom: 20 }}>
+          //   {Object.keys(contactDetailsState).map((key) => {
+          //     const { title,...rest } = contactDetailsState[key];
+          //     return (
+          //       <div key={key}>
+          //         <label className={styles.label} htmlFor={key}>
+          //           {title}
+          //         </label>
+          //         <div>
+          //           <Input
+          //             id={key}
+          //             onChange={(e) => {
+          //               setContactDetailsState((prevContactDetailsState) => {
+          //                 const nextContactDetialsState = {
+          //                   ...prevContactDetailsState,
+          //                 };
+          //                 nextContactDetialsState[key].value = e.target.value;
+          //                 return nextContactDetialsState;
+          //               });
+          //             }}
+          //             {...rest}
+          //           />
+          //         </div>
+          //       </div>
+          //     );
+          //   })}
+          //   <Checkbox onClick={() => { setEmailConsent(!emailConsent) }} checked={emailConsent} label={"Allow Across Rainbows to contact me about my results"} />
+          // </div>,
           <div style={{ marginTop: 10 }}>
             {Object.keys(personalDetailsState).map((key) => {
               const detail = personalDetailsState[key];
@@ -301,7 +304,7 @@ export default function App() {
             <Button onClick={handlePrev}>← Previous</Button>
           ) : null}
           {!isFinished ? (
-            <Button onClick={handleNext}>{page === 2 ? "Finish" : "Next"} →</Button>
+            <Button onClick={handleNext}>{page === 1 ? "Finish" : "Next"} →</Button>
           ) : null}
         </div>
         {/* <Checkbox onClick={() => { setShouldSubmit(!shouldSubmit) }} disabled={!shouldShowCheckbox} checked={shouldSubmit} label={shouldShowCheckbox ? "Record my answers" : hasSubmitted ? "We've recorded your answers" : "Submitting..."} /> */}
